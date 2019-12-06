@@ -1,45 +1,112 @@
 import React, { Component } from 'react';
+import { NavLink, Redirect } from 'react-router-dom';
 import './Login.css'
+import ForgotPass from '../forgotPass/ForgotPass';
+import axios from 'axios';
+import CallApi from './../../utils/CallApi';
+import swal from "sweetalert2";
+import { createHashHistory } from 'history'
 class Login extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: '',
+            password: '',
+            code:false
+        }
+    }
+    onChange = (event) => {
+        //target thay doi input
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+        this.setState({
+            [name]: value
+        });
+    }
+    onSubmit = (e) => {
+      
+        e.preventDefault();
+      
+        const { username, password } = this.state;
+        console.log(this.state);
+       
+        return CallApi('login', 'POST', {
+            "username": username,
+            "password": password,
+            "lang": "en"
+        }, {
+            "x-timo-devicereg": "1494035533:WEB:WEB:83:chrome",
+            'Content-Type': 'application/json'
+        }).then(res => {
+           
+            console.log(res.data)
+            this.setState({
+                code:!this.state.code
+            })
+            //truyen du lieu sang UserLogin/containers
+            if (res.data.code == 200) {
+                console.log(res.data.code)
+                localStorage.setItem('tokenTimo', res.data.data.token);
+                swal.fire({
+                    icon: 'success',
+                    title: 'Bạn đã đăng nhập thành công!',
+                    showConfirmButton: false,
+                    timer: 2000
+
+                })
+                
+
+               
+               
+            
+            }
+            else {
+                swal.fire({
+                    icon: 'error',
+                    title: 'Lỗi rồi',
+                    text: 'Tài khoản hoặc mật khẩu không chính xác!',
+                })
+               
+                // this.props.history.push('/login')
+            }
+          
+        })
+            .catch(() => {
+                // this.props.history.push('/login')
+            })
+    }
+
     render() {
+        const {code}=this.state;
+        console.log(code)
+        
         return (
             <div id="login-page">
-                <div class="container">
-                    <form class="form-login" action="index.html">
-                        <h2 class="form-login-heading">sign in now</h2>
-                        <div class="login-wrap">
-                            <input type="text" class="form-control" placeholder="User ID" autofocus />
-
-                            <input type="password" class="form-control" placeholder="Password" />
-                            <label class="checkbox">
-                                <input type="checkbox" value="remember-me" /> Remember me
-                                    <span class="pull-right">
-                                    <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
-                                </span>
+                <div className="container">
+                    <form className="form-login" onSubmit={this.onSubmit}>
+                        <h2 className="form-login-heading">Login Ibanking</h2>
+                        <div className="login-wrap">
+                            <input type="text"
+                                className="form-control login__user"
+                                placeholder="User ID"
+                                name="username"
+                                value={this.state.username}
+                                onChange={this.onChange}
+                            />
+                            <input type="password"
+                                className="form-control"
+                                placeholder="Password"
+                                name="password"
+                                value={this.state.password}
+                                onChange={this.onChange}
+                            />
+                      <button className="btn btn-theme btn-block login__user" type="submit"><i className="fa fa-lock"></i> ĐĂNG NHẬP</button>
+                            <label className="checkbox ">
+                                <a data-toggle="modal" href="login.html#myModal"> Quên mật khẩu?</a>
                             </label>
-                            <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
-
-
-
                         </div>
-                        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        <h4 class="modal-title">Forgot Password ?</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Enter your e-mail address below to reset your password.</p>
-                                        <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix" />
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
-                                        <button class="btn btn-theme" type="button">Submit</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <ForgotPass />
                     </form>
                 </div>
             </div>

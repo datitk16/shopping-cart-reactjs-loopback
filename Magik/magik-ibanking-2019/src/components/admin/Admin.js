@@ -13,6 +13,7 @@ class Admin extends Component {
                 <aside>
                     <Sidebar />
                 </aside>
+                {/* <Profile/> */}
                 <AdminHome/>
                 {/* <Footer /> */}
             </section>

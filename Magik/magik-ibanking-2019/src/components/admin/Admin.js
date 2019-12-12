@@ -8,6 +8,7 @@ import AdminHome from '../adminHome/AdminHome';
 import AdminAccount from '../adminAcc/AdminAccount';
 import routes from './../../routes/RoutesAdmin';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import AdminUtilities from '../AdminUtilities/AdminUtilities';
 
 
 class Admin extends Component {
@@ -17,13 +18,14 @@ class Admin extends Component {
        
         return (
                 <section id="container">
+                   
                     <Header />
                     <aside>
                         <Sidebar />
                     </aside>
-                    <div className="App">
+                   
                         {this.contentMenu(routes)}
-                    </div>
+                   
 
                     <Footer />
                 </section>

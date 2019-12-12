@@ -58,6 +58,7 @@ class Login extends Component {
                     timer: 2000
 
                 })
+                
                 this.props[0].history.push("/admin")
             
             }

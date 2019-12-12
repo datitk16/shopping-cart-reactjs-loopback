@@ -8,16 +8,16 @@ class Sidebar extends Component {
                 <ul class="sidebar-menu" id="nav-accordion">
                     <p class="centered">
                         <NavLink to="/admin/account">
-                        <img src={require('./../../img/mrdat.jpg')} class="img-circle" width="80" />
+                            <img src={require('./../../img/mrdat.jpg')} class="img-circle" width="80" />
                         </NavLink>
-                       
+
                     </p>
                     <h5 class="centered">Mr.Đạt</h5>
                     <li class="mt">
-                        <NavLink to="/admin">
+                        <a href="/admin">
                             <i class="fa fa-dashboard"></i>
                             <span>Trang chủ</span>
-                        </NavLink>
+                        </a>
 
 
                     </li>
@@ -28,7 +28,7 @@ class Sidebar extends Component {
                         </a>
                         <ul class="sub">
                             <li><NavLink to="/admin/account">Thông tin người dùng</NavLink></li>
-                            <li><NavLink to="/">Thông tài khoản</NavLink></li>
+                            <li><a href="/admin">Thông tài khoản</a></li>
                             <li><NavLink to="/">Thông tin giao dịch</NavLink></li>
                         </ul>
                     </li>
@@ -38,9 +38,9 @@ class Sidebar extends Component {
                             <span>Tiện ích</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="#">Du lịch</a></li>
-                            <li><a href="calendar.html">Chuyển tiền từ nước ngoài</a></li>
-                            
+                            <li><NavLink to="/admin/utilities">Du lịch</NavLink></li>
+                            <li><NavLink to="/admin/utilities">Chuyển tiền từ nước ngoài</NavLink></li>
+
                         </ul>
                     </li>
                     <li class="sub-menu">
@@ -49,13 +49,14 @@ class Sidebar extends Component {
                             <span>Sản phẩm khác</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="blank.html">Timo Mastercard</a></li>
-                            <li><a href="login.html">Bảo hiểm nhân thọ</a></li>
-                            <li><a href="lock_screen.html">Biểu Liberty</a></li>
-                            <li><a href="profile.html">Past Cash</a></li>
-                            <li><a href="invoice.html">Đầu tư tích lũy</a></li>
-                            <li><a href="pricing_table.html">Khoản vay VPBank</a></li>
-                            
+
+                            <li>   <NavLink to="/admin/products">Timo Mastercard</NavLink></li>
+                            <li>   <NavLink to="/admin">Bảo hiểm nhân thọ</NavLink></li>
+                            <li><NavLink to="/admin">Biểu Liberty</NavLink></li>
+                            <li><NavLink to="/admin">Past Cash</NavLink></li>
+                            <li><NavLink to="/admin">Đầu tư tích lũy </NavLink></li>
+                            <li><NavLink to="/admin">Khoản vay VPBank</NavLink></li>
+
                         </ul>
                     </li>
 
@@ -65,8 +66,9 @@ class Sidebar extends Component {
                             <span>Thanh toán</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="basic_table.html">Nhắc nợ</a></li>
-                            <li><a href="responsive_table.html">Thanh hóa đơn</a></li>
+                           
+                            <li> <NavLink to="/admin/paybill">Nhắc nợ</NavLink></li>
+                            <li> <a href="/admin">Thanh toán hóa đơn</a></li>
                         </ul>
                     </li>
                     <li>

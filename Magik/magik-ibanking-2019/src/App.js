@@ -10,14 +10,12 @@ import AdminUtilities from './components/AdminUtilities/AdminUtilities';
 class App extends Component {
   render() {
     return (
-      <div>
-        <AdminUtilities/>
-      </div>
-      // <Router>
-      //   <Switch> 
-      //     {this.contentMenu(routes)} 
-      //   </Switch>
-      // </Router>
+     
+      <Router>
+        <Switch> 
+          {this.contentMenu(routes)} 
+        </Switch>
+      </Router>
     );
   }
   contentMenu = routes => {

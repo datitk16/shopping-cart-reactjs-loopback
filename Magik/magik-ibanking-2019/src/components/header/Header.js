@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {NavLink} from 'react-router-dom'
 class Header extends Component {
     render() {
         return (
@@ -188,7 +188,10 @@ class Header extends Component {
                 </div>
                 <div class="top-menu">
                     <ul class="nav pull-right top-menu">
-                        <li><a class="logout" href="login.html">Logout</a></li>
+
+                        <li> 
+                             <NavLink class="logout"  to="/">Đăng nhập</NavLink>
+                        </li>
                     </ul>
                 </div>
             </header>

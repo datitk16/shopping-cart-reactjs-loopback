@@ -5,8 +5,9 @@ import ForgotPass from '../forgotPass/ForgotPass';
 import axios from 'axios';
 import CallApi from './../../utils/CallApi';
 import swal from "sweetalert2";
-import { createHashHistory } from 'history'
-class Login extends Component {
+import { createHashHistory } from 'history';
+import {actUserRequest} from './../../actions/index'
+class Login extends Component { 
     constructor(props) {
         super(props);
         this.state = {
@@ -25,7 +26,8 @@ class Login extends Component {
         });
     }
     onSubmit = (e) => {
-      
+        actUserRequest()
+        console.log(this.props)
         e.preventDefault();
       
         const { username, password } = this.state;
@@ -39,14 +41,15 @@ class Login extends Component {
             "x-timo-devicereg": "1494035533:WEB:WEB:83:chrome",
             'Content-Type': 'application/json'
         }).then(res => {
-           
             console.log(res.data)
             this.setState({
                 code:!this.state.code
             })
-            //truyen du lieu sang UserLogin/containers
+            //truyen du lieu sang UthisserLogin/containers
             if (res.data.code == 200) {
                 console.log(res.data.code)
+                // console.log(this.props[0].history)
+                
                 localStorage.setItem('tokenTimo', res.data.data.token);
                 swal.fire({
                     icon: 'success',
@@ -55,10 +58,7 @@ class Login extends Component {
                     timer: 2000
 
                 })
-                
-
-               
-               
+                this.props[0].history.push("/admin")
             
             }
             else {
@@ -68,7 +68,6 @@ class Login extends Component {
                     text: 'Tài khoản hoặc mật khẩu không chính xác!',
                 })
                
-                // this.props.history.push('/login')
             }
           
         })

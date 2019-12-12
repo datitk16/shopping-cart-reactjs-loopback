@@ -4,16 +4,20 @@ import './App.css';
 import Admin from './components/admin/Admin';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import routes from './routes/Routes'
+import Login from './components/login/Login';
+import AdminUtilities from './components/AdminUtilities/AdminUtilities';
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div className="App">
-          {this.contentMenu(routes)}
-        </div>
-      </Router>
-
+      <div>
+        <AdminUtilities/>
+      </div>
+      // <Router>
+      //   <Switch> 
+      //     {this.contentMenu(routes)} 
+      //   </Switch>
+      // </Router>
     );
   }
   contentMenu = routes => {
@@ -22,13 +26,14 @@ class App extends Component {
       result = routes.map((route, index) => {
         return <Route
           key={index}
-          path={route.path}
           exact={route.exact}
+          path={route.path} 
           component={route.main}
         />
       })
+      
+    return result
     }
-    return <Switch>{result}</Switch>;
   }
 
 }

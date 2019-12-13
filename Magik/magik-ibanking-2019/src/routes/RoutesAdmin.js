@@ -1,11 +1,10 @@
 import React from 'react';
 import AdminHome from '../components/adminHome/AdminHome';
 import AdminAccContainer from '../containers/AdminAccContainer/AdminAccContainer';
-import NotFound from '../containers/NotFound/NotFound';
 import AdminUtilities from '../components/AdminUtilities/AdminUtilities';
-import adminProducts from '../components/adminProducts/AdminProducts';
 import AdminProducts from '../components/adminProducts/AdminProducts';
 import AdminPay from '../components/adminPayBill/AdminPay';
+import TransactionContainer from '../containers/TransactionContainer/TransactionContainer';
 
 const routes=[
     {
@@ -33,6 +32,11 @@ const routes=[
         path:'/admin/paybill',
         exact:false,
         main:()=><AdminPay/>
+    },
+    {
+        path:'/admin/transaction',
+        exact:false,
+        main:()=><TransactionContainer/>
     }
     
 ]

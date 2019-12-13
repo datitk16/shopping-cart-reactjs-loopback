@@ -5,7 +5,7 @@ class AdminPay extends Component {
     render() {
         return (
             <section id="main-content">
-            <section class="wrapper site-min-height">
+            <section  style={{marginTop:-30}} class="wrapper site-min-height">
                 <h3><i class="fa fa-angle-right"></i> Thanh toán</h3>
                 <div className="row">
                     <div class="col-md-6 mt">

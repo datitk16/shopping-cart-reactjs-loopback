@@ -5,13 +5,13 @@ class AdminHome extends Component {
         return (
 
             <section id="main-content">
-            <section class="wrapper site-min-height">
-              <h3><i class="fa fa-angle-right"></i> Morris Charts</h3>
+            <section style={{marginTop:-30}} class="wrapper site-min-height">
+              <h3><i class="fa fa-angle-right"></i> Trang chủ</h3>
               <div id="morris"> 
                 <div class="row mt">
                   <div class="col-lg-6">
                     <div class="content-panel">
-                      <h4><i class="fa fa-angle-right"></i> Chart Example 1</h4>
+                      <h4><i class="fa fa-angle-right"></i> Chứng khoán</h4>
                       <div class="panel-body">
                         <div id="hero-graph" class="graph"></div>
                       </div>
@@ -19,7 +19,7 @@ class AdminHome extends Component {
                   </div>
                   <div class="col-lg-6">
                     <div class="content-panel">
-                      <h4><i class="fa fa-angle-right"></i> Chart Example 2</h4>
+                      <h4><i class="fa fa-angle-right"></i> Tăng trưởng lãi suất</h4>
                       <div class="panel-body">
                         <div id="hero-bar" class="graph"></div>
                       </div>
@@ -29,7 +29,7 @@ class AdminHome extends Component {
                 <div class="row mt">
                   <div class="col-lg-6">
                     <div class="content-panel">
-                      <h4><i class="fa fa-angle-right"></i> Chart Example 3</h4>
+                      <h4><i class="fa fa-angle-right"></i> Ngoại tệ</h4>
                       <div class="panel-body">
                         <div id="hero-area" class="graph"></div>
                       </div>
@@ -37,7 +37,7 @@ class AdminHome extends Component {
                   </div>
                   <div class="col-lg-6">
                     <div class="content-panel">
-                      <h4><i class="fa fa-angle-right"></i> Chart Example 4</h4>
+                      <h4><i class="fa fa-angle-right"></i> Vàng</h4>
                       <div class="panel-body">
                         <div id="hero-donut" class="graph"></div>
                       </div>

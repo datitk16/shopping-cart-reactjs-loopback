@@ -13,23 +13,13 @@ import AdminUtilities from '../AdminUtilities/AdminUtilities';
 
 class Admin extends Component {
     //xử lý token khi đăng nhập liên tục và token dùng để truy cập vẫn dùng token cũ
-   
     render() {
-       
         return (
-                <section id="container">
-                   
-                    <Header />
-                    <aside>
-                        <Sidebar />
-                    </aside>
-                   
-                        {this.contentMenu(routes)}
-                   
-
-                    <Footer />
-                </section>
-
+            <section id="container">
+                <Header />
+                {this.contentMenu(routes)}
+                <Footer />
+            </section>
         );
     }
     contentMenu = routes => {

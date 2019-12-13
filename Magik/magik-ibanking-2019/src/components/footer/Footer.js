@@ -6,10 +6,10 @@ class Footer extends Component {
             <footer class="site-footer">
             <div class="text-center">
               <p>
-                &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+                &copy;  <strong>Dev code dao</strong>.
               </p>
               <div class="credits">
-                Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
+                Tạo bởi <a href="/admin">Dev dạo</a>
               </div>
               <a href="advanced_form_components.html#" class="go-top">
                 <i class="fa fa-angle-up"></i>

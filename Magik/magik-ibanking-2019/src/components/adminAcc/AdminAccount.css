@@ -4,7 +4,12 @@ a,
 a:hover {
   text-decoration: none;
 }
-
+.button{
+  color: white;
+}
+.button:hover{
+  color: white;
+}
 .icon {
   display: inline-block;
   width: 1em;
@@ -268,6 +273,7 @@ a:hover {
   margin-right: 0;
 }
 .profile-card__button.button--blue {
+  color: white;
   background: linear-gradient(45deg, #1da1f2, #0e71c8);
   box-shadow: 0px 4px 30px rgba(19, 127, 212, 0.4);
 }
@@ -284,7 +290,7 @@ a:hover {
 .profile-card__button.button--gray {
   box-shadow: none;
   background: #dcdcdc;
-  color: #142029;
+  color: white;
 }
 .profile-card-message {
   width: 100%;

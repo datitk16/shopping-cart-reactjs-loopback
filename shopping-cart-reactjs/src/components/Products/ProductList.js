@@ -60,7 +60,36 @@ class ProductList extends Component {
                             </ul>
                             <div id="myTabContent" class="tab-content">
 
-                                {this.renderProduct()}
+
+                                <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+
+                                    <div>
+                                        <div id="container">
+                                            <div class="view-controls-list" id="viewcontrols">
+                                                <label>view :</label>
+                                                <a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
+                                                <a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
+                                            </div>
+                                            <div class="sort">
+                                                <div class="sort-by">
+                                                    <label>Sort By : </label>
+                                                    <select>
+                                                        <option value="">Most recent</option>
+                                                        <option value="">Price: Rs Low to High</option>
+                                                        <option value="">Price: Rs High to Low</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <ul class="list">
+
+                                                {this.renderProduct()}
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
 
                                 <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
                                     <div>
@@ -161,7 +190,7 @@ class ProductList extends Component {
                     </div>
                 </div>
                 <div class="clearfix"></div>
-                <Modal/>
+             
             </div>
         );
     }
